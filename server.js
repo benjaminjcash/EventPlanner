@@ -1,9 +1,18 @@
 const express = require("express");
 const apiRouter = require('./routes/apiRoutes');
 const PORT = 3000;
+const mongoose = require('mongoose');
+
 
 const app = express();
 
 app.use('/api', apiRouter);
+
+mongoose.connect('mongodb://localhost/EventPlannerDB');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log(`we're connected!`);
+});
 
 app.listen(PORT, () => console.log("Server listening on port " + PORT));
