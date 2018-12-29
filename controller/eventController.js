@@ -4,7 +4,7 @@ const eventController = {
 	findAll: function(req, res) {
 		console.log(req.params.id);
 		let id = req.params.id;
-		res.send('all events');
+		res.send(['one', 'two', 'three']);
 	},
 
 	findById: function(req, res) {
