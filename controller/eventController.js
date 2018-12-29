@@ -2,9 +2,12 @@ const Event = require('../models/Event');
 
 const eventController = {
 	findAll: function(req, res) {
-		console.log(req.params.id);
-		let id = req.params.id;
-		res.send(['one', 'two', 'three']);
+
+		Event.find()
+			.then((data) => {
+				console.log(data);
+				res.send(data);
+			})
 	},
 
 	findById: function(req, res) {

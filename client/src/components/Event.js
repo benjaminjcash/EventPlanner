@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 
 class Event extends Component {
     state = {
-        value: 2
+        title: "title"
     }
 
     componentDidMount() {
         this.setState({
-            value: this.props.poop
+            title: this.props.title
         })
     }
     
     render() {
         return (
         <div>
-            <p>event {this.state.value}</p>
+            <p>Event: {this.state.title}</p>
         </div>
         )
 

@@ -10,17 +10,16 @@ class Home extends Component {
 	componentDidMount() {
 		axios.get('/api/events')
 			.then((data) => {
-				let arr;
-				arr = (data.data);
+				let newArr = data.data.map((eventData) => {return { title: eventData.title, id: eventData.id } })
 				this.setState({
-					data: arr
+					data: newArr
 				});
 			});
 	}
 
 	render() {
 		return (
-			this.state.data.map((event) => {return <Event key={event} poop={event}/>})
+			this.state.data.map((event) => {return <Event key={event.title} title={event.title}/>})
 		)
 	}
 }
