@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Event from '../../components/Event.js';
+import Event from '../../components/Event/Event.js';
 import axios from 'axios';
+import "./Home.css";
 
 class Home extends Component {
 	state = {

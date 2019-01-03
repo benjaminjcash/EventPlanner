@@ -1,0 +1,18 @@
+.item {
+	flex-grow: 1;
+	margin: 30px;
+	height: 300px;
+	width: 300px;
+}
+
+#green {
+	background-color: green;
+}
+
+#blue {
+	background-color: blue;
+}
+
+#red {
+	background-color: red;
+}
