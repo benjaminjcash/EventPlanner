@@ -9,6 +9,10 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
+		this.fetchEvents();
+	}
+
+	fetchEvents = () => {
 		axios.get('/api/events')
 			.then((data) => {
 				let newArr = data.data;
@@ -17,13 +21,22 @@ class Home extends Component {
 				});
 			});
 	}
+
+	deleteEvent = (id) => {
+		console.log("id: " + id);
+		axios.delete(`/api/events/${id}`)
+			.then((res) => {
+				this.fetchEvents();
+			})
+
+	}
 	
 	render() {
 		return (
 			<div>
 				{
-					this.state.data.map(function(eventData) {
-						return	<Event title = {eventData.title} />
+					this.state.data.map((eventData) => {
+						return	<Event data={eventData} handleDelete={this.deleteEvent} />
 					})
 				}
 			</div>
