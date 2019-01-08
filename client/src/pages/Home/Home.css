@@ -1,3 +1,5 @@
-.container {
+#event-container {
 	display: flex;
+	margin: 40px;
+	flex-wrap: wrap;
 }

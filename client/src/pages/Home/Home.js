@@ -33,7 +33,7 @@ class Home extends Component {
 	
 	render() {
 		return (
-			<div>
+			<div id="event-container">
 				{
 					this.state.data.map((eventData) => {
 						return	<Event data={eventData} handleDelete={this.deleteEvent} />

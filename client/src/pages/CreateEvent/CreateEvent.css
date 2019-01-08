@@ -1,0 +1,19 @@
+#form {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    border-color: red;
+    border-style: solid;
+    padding: 40px;
+}
+
+.form-item {
+    flex: item;
+    flex-basis: auto;
+    margin: 20px;
+}
+
+#submit-btn {
+    width: 100px;
+}
