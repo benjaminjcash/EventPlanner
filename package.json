@@ -2,10 +2,11 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.4.0"
+    "mongoose": "^5.4.0",
+    "react-router-dom": "^4.3.1"
   },
   "scripts": {
-	"server": "node server.js",
+    "server": "node server.js",
     "client": "node scripts/start-client",
     "start": "concurrently \"node server.js\" \"npm run client\""
   },
@@ -13,10 +14,10 @@
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.9"
   },
-  "proxy":{
-  	  "/api": {
-		"target": "https://localhost:3000",
-		"secure": false
-	  }
+  "proxy": {
+    "/api": {
+      "target": "https://localhost:3000",
+      "secure": false
+    }
   }
 }

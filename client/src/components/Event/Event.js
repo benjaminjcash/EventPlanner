@@ -3,34 +3,29 @@ import './Event.css';
 
 class Event extends Component {
     state = {
-        title: "title",
-		color: "color"
+		title: "",
+		id: ""
     }
 
     componentDidMount() {
-		let title = this.props.title;
-		let color;
-		switch (title) {
-			case "Test Event 1":
-				color = "red";
-				break;
-			case "Test Event 2":
-				color = "blue";
-				break;
-			case "Test Event 3":
-				color = "green";
-				break;
-		}
+		let title = this.props.data.title;
+		let id = this.props.data._id;
         this.setState({
             title: title,
-			color: color
+			id: id
         })
     }
     
+	handleDeleteEvent = () => {
+		this.props.handleDelete(this.state.id);
+	}
+
     render() {
         return (
         <div className="item" id={this.state.color}>
             <p>Event: {this.state.title}</p>
+			<p>ID: {this.state.id}</p>
+			<button onClick={this.handleDeleteEvent}>Delete</button>
         </div>
         )
 
