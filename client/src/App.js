@@ -7,22 +7,19 @@ import CreateEvent from "./pages/CreateEvent/CreateEvent";
 class App extends Component {
   render() {
     return (
-      <div className="App container">
+      <div>
 		<Router>
 			<div>
-			  <nav>
-				<ul>
-				  <li>
+				<ul className="container">
+					<li>
 					<Link to="/">Home</Link>
-				  </li>
-				  <li>
+					</li>
+					<li>
 					<Link to="/create">Create</Link>
-				  </li>
+					</li>
 				</ul>
-			  </nav>
-
-			  <Route path="/" exact component={Home} />
-			  <Route path="/create" exact component={CreateEvent} />
+				<Route path="/" exact component={Home} />
+				<Route path="/create" exact component={CreateEvent} />
 			</div>
 		</Router>
       </div>

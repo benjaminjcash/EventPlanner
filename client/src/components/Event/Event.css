@@ -1,18 +1,6 @@
 .item {
-	flex-grow: 1;
-	margin: 30px;
-	height: 300px;
-	width: 300px;
-}
-
-#green {
-	background-color: green;
-}
-
-#blue {
+	flex-grow: 2;
 	background-color: blue;
-}
-
-#red {
-	background-color: red;
+	border-color: red;
+	border-style: solid
 }
