@@ -4,7 +4,6 @@ const eventController = {
 	findAll: function(req, res) {
 		Event.find()
 			.then((data) => {
-				console.log(data);
 				res.send(data);
 			})
 	},
@@ -31,6 +30,17 @@ const eventController = {
 			}
 			res.send(event);
 		})
+	},
+
+	edit: function(req, res) {
+		let id = req.params.id;
+		let data = req.data;
+		Event.findByIdAndUpdate(id,  { $set: data }, { new: true }, function(err, event) {
+			if(err) {
+				res.send(err);
+			}
+			res.send(event);
+		});
 	}
 }
 

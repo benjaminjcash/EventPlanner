@@ -1,7 +1,7 @@
 const express = require("express");
 const apiRouter = require('./routes/apiRoutes');
 const mongoose = require('mongoose');
-const PORT = 3001;
+const PORT = 3000;
 
 const app = express();
 const bodyParser = require("body-parser");
@@ -18,3 +18,5 @@ db.once('open', function() {
 });
 
 app.listen(PORT, () => console.log("Server listening on port " + PORT));
+
+module.exports = app;
