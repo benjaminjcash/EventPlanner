@@ -10,7 +10,7 @@ const eventController = {
 
 	findById: function(req, res) {
 		let id = req.params.id;
-		res.send('event id: ' + id);
+		res.json({ eventid: id });
 	},
 
 	create: function(req, res) {

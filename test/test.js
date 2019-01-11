@@ -1,7 +1,8 @@
 let chai = require('chai');
 let chaiHTTP = require('chai-http');
 let should = chai.should();
-let server = require('../server');
+let expect = chai.expect;
+let server = require('../server.js');
 
 chai.use(chaiHTTP);
 console.log("starting tests");
@@ -12,6 +13,7 @@ describe('GET /api/events', () => {
             .get('/api/events')
             .end((err, res) => {
                 res.should.have.status(200);
+                console.log(res.body);
                 res.body.should.be.a('array');
                 done();
             });
@@ -24,8 +26,8 @@ describe('GET /api/events/5c378fe15d78a6226090a6e0', () => {
            .get('/api/events/5c378fe15d78a6226090a6e0')
            .end((err, res) => {
                res.should.have.status(200);
-               res.body.should.be.a('object');
-               console.log(res.body);
+               expect(res).to.be.json;
+               expect(res.body.eventid).to.eql('5c378fe15d78a6226090a6e0');
                done();
            });
    });
