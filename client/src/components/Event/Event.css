@@ -1,6 +1,32 @@
-.item {
+.eventCard {
+	background-color: blueviolet;
+	margin: 20px;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+}
+
+.eventData {
+	flex-grow: 4;
+}
+
+.eventImage {
+	flex-grow: 1;
+}
+
+.eventControls {
 	flex-grow: 2;
-	background-color: blue;
-	border-color: red;
-	border-style: solid
+	margin-left: 30px;
+}
+
+img {
+	width: 100%;
+	margin: auto;
+}
+
+button {
+	padding: 15px;
+	background-color: red;
+	font-size: 20px;
 }

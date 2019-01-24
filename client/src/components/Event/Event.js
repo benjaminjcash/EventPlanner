@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Event.css';
 
 let Event = (props) => {
     return (
-        <div className="item">
-            <p>Event: {props.data.title}</p>
-            <p>ID: {props.data._id}</p>
-            <button onClick={() => props.handleDelete(props.data._id)}>Delete</button>
+        <div className='eventCard'>
+            <div className='eventData'>
+                <h1>{props.data.title}</h1>
+                <p>{props.data.description}</p>
+                <br/>
+            </div>
+            <div className='eventImage'>
+                <img src={props.data.imgUrl} />
+            </div>
+            <div className='eventControls'>
+                <button onClick={() => props.handleDelete(props.data._id)}>Delete</button>
+            </div>
         </div>
     )
 }

@@ -5,7 +5,8 @@ let eventSchema = new Schema({
 	title: String,
 	creator: String,
 	description: String,
-	date: Date
+	date: Date,
+	imgUrl: String
 });
 
 let Event = mongoose.model('Event', eventSchema);

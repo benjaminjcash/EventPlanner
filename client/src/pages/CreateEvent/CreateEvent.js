@@ -6,7 +6,8 @@ class CreateEvent extends Component {
 	state = {
 		title: "",
 		creator: "",
-		description: ""
+		description: "",
+		imgUrl: ""
 	}
 
 	handleInputChange = (event) => {
@@ -42,6 +43,12 @@ class CreateEvent extends Component {
 					<br/>
 					<textarea rows="6" cols="50" type="text" name="description" value={this.state.value} onChange={this.handleInputChange} />
 					<br/>
+				</label>
+				<label className="form-item">
+					Image Link
+					<br />
+					<textarea type="text" type="text" name="imgUrl" value={this.state.value} onChange={this.handleInputChange} />
+					<br />
 				</label>
 				<button className="form-item" id="submit-btn" onClick={this.handleSubmit}>Submit</button>
 			</form>

@@ -5,7 +5,6 @@ let expect = chai.expect;
 let server = require('../server.js');
 
 chai.use(chaiHTTP);
-console.log("starting tests");
 
 describe('GET /api/events', () => {
     it('should get all events', (done) => {
@@ -31,7 +30,7 @@ describe('GET /api/events/5c378fe15d78a6226090a6e0', () => {
                done();
            });
    });
-});
+}); 
 
 
 
